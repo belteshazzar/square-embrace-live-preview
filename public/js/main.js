@@ -1,3 +1,6 @@
+
+import sqrm from './sqrm-0.1.0.min.js'
+
 $(function() {
     let isEdited = false;
 
@@ -33,7 +36,20 @@ $(function() {
     });
 
     let convert = () => {
-        let html = marked(editor.getValue());
+        let result = sqrm(editor.getValue());
+        let html,json;
+        if (Array.isArray(result)) {
+            html = '';
+            json = [];
+            result.forEach(r => {
+                html += '\n' + r.html;
+                json.push(r.json);
+            });
+        } else {
+            html = result.html;
+            json = result.json;
+        }
+        console.log(json);
         let sanitized = DOMPurify.sanitize(html);
         $('#output').html(sanitized);
     }
@@ -47,4 +63,10 @@ $(function() {
 
     convert();
     adjustScreen();
+
+    fetch('js/example.sqrm')
+        .then(r => r.text())
+        .then(t => {
+            editor.setValue(t);
+        })
 });

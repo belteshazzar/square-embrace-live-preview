@@ -5,7 +5,7 @@
     <meta http-equiv="content-language" content="en">
     <meta http-equiv="content-script-type" content="text/javascript">
     <meta http-equiv="content-style-type" content="text/css">
-    <meta name="description" content="This is the online markdown editor with live preview.">
+    <meta name="description" content="This is the online square embrace editor with live preview.">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/github-markdown.css">
@@ -13,90 +13,23 @@
 
     <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.autosize-min.js"></script>
-    <script type="text/javascript" src="js/marked.min.js"></script>
     <script type="text/javascript" src="js/purify.min.js"></script>
     <script type="text/javascript" src="js/ace/ace.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
-    <title>Markdown Live Preview</title>
+    <title>Square Embrace Live Preview</title>
   </head>
   <body>
 
     <div id="header">
-      <h1><a href="/">Markdown Live Preview</a></h1>
+      <h1><a href="/">Square Embrace Live Preview</a></h1>
     </div>
 
     <div id="container">
 
       <div id="edit" class="column">
         <div id="editor-wrapper">
-          <div id="editor"># Markdown syntax guide
-
-## Headers
-
-# This is a Heading h1
-## This is a Heading h2 
-###### This is a Heading h6
-
-## Emphasis
-
-*This text will be italic*  
-_This will also be italic_
-
-**This text will be bold**  
-__This will also be bold__
-
-_You **can** combine them_
-
-## Lists
-
-### Unordered
-
-* Item 1
-* Item 2
-* Item 2a
-* Item 2b
-
-### Ordered
-
-1. Item 1
-1. Item 2
-1. Item 3
-  1. Item 3a
-  1. Item 3b
-
-## Images
-
-![This is a alt text.](/image/sample.png "This is a sample image.")
-
-## Links
-
-You may be using [Markdown Live Preview](https://markdownlivepreview.com/).
-
-## Blockquotes
-
-> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
->
->> Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-
-## Tables
-
-| Left columns  | Right columns |
-| ------------- |:-------------:|
-| left foo      | right foo     |
-| left bar      | right bar     |
-| left baz      | right baz     |
-
-## Blocks of code
-
-```
-let message = 'Hello world';
-alert(message);
-```
-
-## Inline code
-
-This web site is using `markedjs/marked`.</div>
+          <div id="editor">loading example ...</div>
         </div>
       </div><!-- Do not insert new line here --><div id="preview" class="column">
           <div id="preview-wrapper">
@@ -107,20 +40,8 @@ This web site is using `markedjs/marked`.</div>
     </div>
 
     <div id="footer">
-      <div id="copyright"><a href="https://github.com/tanabe/markdown-live-preview"><img src="image/GitHub-Mark-Light-32px.png"></a></div>
+      <div id="copyright"><a href="https://github.com/belteshazzar/square-embrace-live-preview"><img src="image/GitHub-Mark-Light-32px.png"></a></div>
     </div>
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-73660-14']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
 
   </body>
 </html>
