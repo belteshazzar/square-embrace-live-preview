@@ -1,0 +1,37 @@
+
+.markdown-body div.alert-info,
+.markdown-body div.alert-tip,
+.markdown-body div.alert-note,
+.markdown-body div.alert-warning {
+    border-radius: 3px;
+    padding: 16px 16px 16px 32px;
+    margin-bottom: 16px;
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+}
+
+.markdown-body div.alert-info {
+    background-image: url(../image/information-line.svg);
+    background-color: #f6f8fa;
+}
+
+.markdown-body div.alert-tip {
+    background-image: url(../image/lightbulb-line.svg);
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.markdown-body div.alert-note {
+    background-image: url(../image/sticky-note-line.svg);
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.markdown-body div.alert-warning {
+    background-image: url(../image/error-warning-line.svg);
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}

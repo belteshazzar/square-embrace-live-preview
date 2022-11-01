@@ -55,16 +55,16 @@ $(function() {
     }
     
     //leave
-    $(window).bind('beforeunload', function() {
-      if (isEdited) {
-        return 'Are you sure you want to leave? Your changes will be lost.';
-      }
-    });
+    // $(window).bind('beforeunload', function() {
+    //   if (isEdited) {
+    //     return 'Are you sure you want to leave? Your changes will be lost.';
+    //   }
+    // });
 
     convert();
     adjustScreen();
 
-    fetch('js/example.sqrm')
+    fetch('example.sqrm')
         .then(r => r.text())
         .then(t => {
             editor.setValue(t);

@@ -72,9 +72,8 @@ As with blockquotes, indenting (2 spaces) is used in square embrace. Code blocks
   let message = 'Hello world';
   alert(message);
 
-```tip
+```note
   info, tip, note and warning are supported languages that create special panels
 
-== Inline code
 
-This web site is using ``belteshazzar/square-embrace``.
+
