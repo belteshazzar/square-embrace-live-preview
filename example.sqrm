@@ -37,8 +37,8 @@ There is also support for --strike-through--, ``code``, __underscore__, ^^super^
 
 == Images
 
-Images are a little bit special ... and done work just as yet :( 
-![This is a alt text.](/image/sample.png "This is a sample image.")
+Images use the div line markup:
+<img src="image/sample.png" width="200" height="200" alt="This is a sample image"
 
 == Links
 
