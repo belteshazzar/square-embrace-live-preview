@@ -1,5 +1,5 @@
 
-import sqrm from './sqrm-0.1.0.min.js'
+import sqrm from './sqrm-0.1.4.min.js'
 
 $(function() {
     let isEdited = false;
@@ -38,10 +38,10 @@ $(function() {
     let convert = () => {
         let result = sqrm(editor.getValue());
         let html,json;
-        if (Array.isArray(result)) {
+        if (result.docs !== undefined && Array.isArray(result.docs)) {
             html = '';
             json = [];
-            result.forEach(r => {
+            result.docs.forEach(r => {
                 html += '\n' + r.html;
                 json.push(r.json);
             });
