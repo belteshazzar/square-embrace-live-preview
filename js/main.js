@@ -1,5 +1,5 @@
 
-import sqrm from './sqrm-0.1.4.min.js'
+import sqrm from './sqrm-0.1.6.min.js'
 
 $(function() {
     let isEdited = false;

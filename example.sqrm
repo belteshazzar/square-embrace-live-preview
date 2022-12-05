@@ -4,8 +4,8 @@
 
 Note that headers use = instead of # like in markdown,
 thats because # is used for #tags, and they are
-powerful (hint: look at the javascript console - but we'll get to that latter ;) )
-
+powerful (hint: look at the javascript console - but we’ll get to that latter ;) )
+ 
 = This is a Heading h1
 == This is a Heading h2 
 ====== This is a Heading h6
@@ -70,7 +70,7 @@ be formatted individually. Formatting applied to a header is applied to the whol
 As with blockquotes, indenting (2 spaces) is used in square embrace. Code blocks can be created with <pre and <code blocks but the three tick shorthand can also be used.
 
 ```javascript
-  let message = 'Hello world';
+  let message = ‘Hello world’;
   alert(message);
 
 ```note
@@ -105,6 +105,5 @@ List of people younger than 70:
 %>
   - ${res.name} = ${res.age}
 <%
-  })
+  })  
 %>
-
