@@ -37,7 +37,7 @@ $(function() {
 
     let convert = () => {
         let result = sqrm(editor.getValue());
-        if (result && result.docs && Array.isArray(result.docs)) console.log(result.docs[1].html)
+
         let html,json;
         if (result.docs !== undefined && Array.isArray(result.docs)) {
             html = '';
