@@ -1,5 +1,5 @@
 
-import sqrm from './sqrm-0.1.7.js'
+import sqrm from './sqrm-0.1.8.js'
 
 $(function() {
     let isEdited = false;
@@ -16,6 +16,34 @@ $(function() {
     $(window).resize(() => {
         adjustScreen();
     });
+
+    window.sqrmCB = function() {
+        switch (arguments[0]) {
+            case 'href' : 
+                window.open(arguments[1],'_blank');
+                break
+            case 'task':
+                const lineNum = arguments[1]
+                const newState = arguments[2]
+                const txt = editor.getValue()
+                const lines = txt.split('\n')
+                const line = lines[lineNum - 1]
+                const m = line.match(/^(.*?\[)( *[xX]? *)(\].*)$/)
+                const newLine = m[1]+(newState ? 'X'+m[2].substring(1) : m[2].replace(/[xX]/,' ')) +m[3]
+                let newTxt = ''
+                for (let i=0 ; i<lines.length ; i++) {
+                    if (i>0) newTxt += '\n'
+                    if (i == lineNum - 1) newTxt += newLine
+                    else newTxt += lines[i]
+                }
+                editor.setValue(newTxt)
+                break
+            default:
+                console.log('sqrmCB',arguments)
+            }
+
+        return false
+    }
 
     // Setup editor
     let editor = ace.edit('editor');
@@ -38,6 +66,7 @@ $(function() {
     let convert = () => {
         let result = sqrm(editor.getValue());
 
+        console.log(result)
         let html,json;
         if (result.docs !== undefined && Array.isArray(result.docs)) {
             html = '';
@@ -51,8 +80,8 @@ $(function() {
             json = result.json;
         }
         console.log(json);
-        let sanitized = DOMPurify.sanitize(html);
-        $('#output').html(sanitized);
+//        let sanitized = DOMPurify.sanitize(html);
+        $('#output').html(html);
     }
     
     //leave
@@ -65,7 +94,8 @@ $(function() {
     convert();
     adjustScreen();
 
-    fetch('example.sqrm')
+   fetch('example.sqrm')
+    // fetch('callback_test.sqrm')
         .then(r => r.text())
         .then(t => {
             editor.setValue(t);

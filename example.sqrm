@@ -35,6 +35,15 @@ There is also support for --strike-through--, ``code``, __underscore__, ^^super^
   1. Item 3a
   1. Item 3b
 
+=== Task list
+
+an example task list:
+
+- [ ] first item
+- [ ] second item
+- [X] third item
+- [ ] forth item
+
 == Images
 
 Images use the div line markup:
